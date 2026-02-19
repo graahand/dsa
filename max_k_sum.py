@@ -3,10 +3,13 @@ from collections import defaultdict
 def max_k_sum(numbers, k):
     merodict = defaultdict(int)
     pairs = 0 
+    # result = []
 
     for number in numbers:
         if merodict[k-number] > 0:
             pairs += 1
+            # if we were required to return actual pairs
+            # result.append((number, k-number))
             merodict[k-number] -= 1
         else:
             merodict[number] += 1
